@@ -1,6 +1,16 @@
 import { combineReducers } from "redux";
-import request from "./request"
+import {  persistReducer  } from 'redux-persist'
+import storage from 'redux-persist/es/storage'
+import post from "./post"
 
-export default combineReducers({
-    request
-})
+const reducers = combineReducers({
+    post,
+    // add more reducer
+  })
+
+  const config = {
+    key: 'root',
+    storage
+}
+
+export default persistReducer(config, reducers)

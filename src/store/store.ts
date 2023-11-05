@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import env from 'react-dotenv';
+import { persistStore } from 'redux-persist';
 import rootReducer from './reducers';
 
 const middlewares = [thunkMiddleware];
@@ -12,7 +12,7 @@ declare global {
 }
 
 const composeEnhancers =
-  env.APP_ENV === 'development' &&
+import.meta.env.VITE_APP_ENV === 'development' &&
   typeof window === 'object' &&
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
@@ -21,5 +21,6 @@ const composeEnhancers =
 const enhancers = applyMiddleware(...middlewares);
 
 const store = createStore(rootReducer, composeEnhancers(enhancers));
+const persistor = persistStore(store);
 
-export default store;
+export { store, persistor };

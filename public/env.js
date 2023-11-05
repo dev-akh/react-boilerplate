@@ -1,9 +1,9 @@
 window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\Charrtoo\\AppData\\Roaming",
-  "APP_ENV": "prod",
+  "APP_ENV": "development",
   "APR_ICONV_PATH": "C:\\Program Files (x86)\\Subversion\\iconv",
-  "BASE_URL": "http://localhost:8000/api",
+  "BASE_URL": "https://jsonplaceholder.typicode.com/",
   "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
   "ChocolateyLastPathUpdate": "132991766942122235",
   "COLOR": "1",

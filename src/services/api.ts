@@ -1,10 +1,9 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import env from 'react-dotenv';
 
-const BASE_URL = env.API_ENDPOINT;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const API_ENDPOINTS = {
-  LEAVE_TYPES: '/leave/types',
+  POSTS: '/posts',
   // Add more endpoints as needed
 };
 

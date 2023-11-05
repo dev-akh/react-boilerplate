@@ -1,26 +1,32 @@
 import * as type from "../types";
+import { PostData } from "../../pages/Post/Post";
 
-const initialState = {
-    leaveTypes: [],
+export interface postStates{
+    posts: PostData[],
+    loading: boolean,
+    error: string | null
+}
+const initialState: postStates = {
+    posts: [],
     loading: false,
     error: null,
 };
 
 const reducer = (state = initialState, action: { type: string, payload: JSON}) => {
     switch (action.type) {
-        case type.LEAVE_TYPES:
+        case type.POST:
             return {
                 ...state,
                 loading: true,
                 error: null,
             };
-        case type.LEAVE_TYPES_SUCCESS:
+        case type.POST_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                leaveTypes: action.payload,
+                posts: action.payload,
             };                
-        case type.LEAVE_TYPES_FAIL:
+        case type.POST_FAIL:
             return {
                 ...state,
                 loading: false,
