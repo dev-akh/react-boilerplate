@@ -10,7 +10,7 @@ function Start() {
       <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
         <img src={reactLogo} className="logo react" alt="React logo" />
       </a>
-      <h1>React</h1> 
+      <h1>React Boilerplate</h1> 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           Count is {count} 
@@ -20,6 +20,7 @@ function Start() {
         <a href='/posts'>
           Posts
         </a>
+        <i className="text-danger">Currently online, wouldn't be avaliable!</i>
       </div>
     </div>
   );
