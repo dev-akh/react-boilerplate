@@ -5,10 +5,20 @@ import { postStates } from "../../store/reducers/post";
 import  PostItem  from "../../components/Post/PostItem";
 import { PostData } from './Post';
 import { fetchPosts } from "../../store/actions/post";
+import React, { useEffect } from 'react'
 
-const PostList = ({ loading, posts }: { loading: boolean, posts: PostData[]}) => {
+
+interface PostListProps {
+  loading: boolean;
+  posts: PostData[];
+  fetchPosts: () => void;
+}
+
+const PostList :  React.FC<PostListProps> = ({ loading, posts, fetchPosts })=> {
   const postlist = posts?.map((post,key) => <PostItem key={key} {...post} />);
-
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
   return (
     <>
       {loading && (

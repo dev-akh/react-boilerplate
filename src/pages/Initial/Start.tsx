@@ -20,7 +20,7 @@ function Start() {
         <a href='/posts'>
           Posts
         </a>
-        <i className="text-danger">Currently online, wouldn't be avaliable!</i>
+        <p><i className="text-danger">Currently online, wouldn't be avaliable!</i></p>
       </div>
     </div>
   );

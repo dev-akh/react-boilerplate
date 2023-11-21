@@ -6,17 +6,16 @@ import rootReducer from './reducers';
 const middlewares = [thunkMiddleware];
 
 declare global {
-    interface Window {
-      __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-    }
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
 }
 
 const composeEnhancers =
-import.meta.env.VITE_APP_ENV === 'development' &&
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
-    : compose;
+  (import.meta.env.VITE_APP_ENV === 'development' &&
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
 
 const enhancers = applyMiddleware(...middlewares);
 
