@@ -18,7 +18,7 @@
     ],
     "prettier.useTabs": true,
     "prettier.jsxSingleQuote": false,
-    "prettier.tabWidth": 4,
+    "prettier.tabWidth": 2,
     "prettier.arrowParents": "avoid",
     "prettier.singleQuote": true
 }

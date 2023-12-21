@@ -11,8 +11,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        assetFileNames: "akh-bundle.[ext]",
-        entryFileNames: "akh-bundle.js"
+        assetFileNames: 'akh-bundle.[ext]',
+        entryFileNames: 'akh-bundle.js'
       },
     },
   }

@@ -17,6 +17,13 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'no-console': ['error', { 'allow': ['warn', 'error'] }]
+    'no-console': [
+      'error', 
+      { 'allow': ['warn', 'error'] }
+    ],
+    'quotes': ['error', 'single'],
+    'indent': ['error', 2, { FunctionDeclaration: { parameters: 'first' } }],
+    'no-trailing-spaces': 'error',
+    'eol-last': ['error', 'always'],
   },
 }

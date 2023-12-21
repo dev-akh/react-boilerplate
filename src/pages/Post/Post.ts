@@ -4,3 +4,9 @@ export interface PostData{
     title: string,
     body: string
 }
+
+export interface PostListProps {
+    loading: boolean;
+    posts: PostData[];
+    fetchPosts: () => void;
+  }

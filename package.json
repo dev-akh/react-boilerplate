@@ -1,13 +1,29 @@
 {
   "name": "react-boilerplate",
+  "author": {
+    "name": "Aung Kyaw Htwe",
+    "email": "dev.aungkyawhtwe@gmail.com"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite  --mode development ",
+    "start": "vite  --mode development ",
     "build": "npm run lint && tsc && vite build --mode production",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -32,6 +48,8 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
